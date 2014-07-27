@@ -624,7 +624,7 @@ const SFB_PARAM_LONG p_FDKaacEnc_64000_long_1024 = {
 };
 const SFB_PARAM_SHORT p_FDKaacEnc_64000_short_128 = {
     12,
-    {  4,  4,  4,  4,  4,  4,  8,  8,  8, 16, 28, 36 }
+    {  4,  4,  4,  4,  4,  4,  8,  8,  8, 18, 30, 32 }
 };
 const SFB_PARAM_LONG p_FDKaacEnc_88200_long_1024 = {
     41,
@@ -634,7 +634,7 @@ const SFB_PARAM_LONG p_FDKaacEnc_88200_long_1024 = {
 };
 const SFB_PARAM_SHORT p_FDKaacEnc_88200_short_128 = {
     12,
-    {  4,  4,  4,  4,  4,  4,  8,  8,  8, 16, 28, 36 }
+    {  4,  4,  4,  4,  4,  4,  8,  8,  8, 18, 30, 32 }
 };
 const SFB_PARAM_LONG p_FDKaacEnc_96000_long_1024 = {
     41,
@@ -644,7 +644,7 @@ const SFB_PARAM_LONG p_FDKaacEnc_96000_long_1024 = {
 };
 const SFB_PARAM_SHORT p_FDKaacEnc_96000_short_128 = {
     12,
-    {  4,  4,  4,  4,  4,  4,  8,  8,  8, 16, 28, 36 }
+    {  4,  4,  4,  4,  4,  4,  8,  8,  8, 18, 30, 32 }
 };
 
 
