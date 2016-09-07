@@ -99,7 +99,7 @@ amm-info@iis.fraunhofer.de
   inline INT fixnormz_D(LONG value)
   {
     INT result;
-    asm("clz %0, %1 ": "=r"(result) : "r"(value) );
+    asm("clz %w0, %w1 ": "=r"(result) : "r"(value) );
     return result;
   }
 

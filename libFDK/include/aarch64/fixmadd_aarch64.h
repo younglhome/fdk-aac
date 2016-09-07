@@ -99,8 +99,10 @@ amm-info@iis.fraunhofer.de
 
       inline FIXP_DBL fixmadddiv2_DD (FIXP_DBL x, const FIXP_DBL a, const FIXP_DBL b) {
         INT result;
-        asm  ("madd %0, %1, %2, %3;\n"
-              : "=r" (result)
+        asm  ("smull %0, %w1, %w2\n"
+              "asr %0, %0, #32\n"
+              "add %w0, %w0, %w3\n"
+              : "=&r" (result)
               : "r" (a), "r" (b), "r"(x) );
         return result ;
       }

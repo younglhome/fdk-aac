@@ -109,7 +109,9 @@ amm-info@iis.fraunhofer.de
 inline INT fixmuldiv2_DD (const INT a, const INT b)
 {
   INT result ;
-  __asm__ ("smulh %0, %1, %2" : "=r" (result)
+  __asm__ ("smull %0, %w1, %w2\n"
+           "asr   %0, %0, #32\n"
+                              : "=r" (result)
                               : "r" (a), "r" (b)) ;
   return result ;
 }
