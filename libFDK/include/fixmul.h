@@ -108,7 +108,7 @@ amm-info@iis.fraunhofer.de
 #include "ppc/fixmul_ppc.h"
 
 #elif defined(__aarch64__) || defined(__AARCH64EL__)
-#include "aarch64/fixmul_aarch64.h"
+#define NO_WARN_FIXMUL
 
 #endif /* all cores */
 
@@ -120,10 +120,12 @@ amm-info@iis.fraunhofer.de
 
 #if !defined(FUNCTION_fixmuldiv2_DD)
 #define FUNCTION_fixmuldiv2_DD
+#ifndef NO_WARN_FIXMUL
 #if defined(_MSC_VER) || defined(__CC_ARM) || defined(__ANALOG_EXTENSIONS__) || defined(__TI_COMPILER_VERSION__)
 #pragma message ("Extremely slow implementation of fixmuldiv2_DD !!")
 #else
 #warning Extremely slow implementation of fixmuldiv2_DD !!
+#endif
 #endif
 inline LONG fixmuldiv2_DD (const LONG a, const LONG b)
 {
@@ -133,10 +135,12 @@ inline LONG fixmuldiv2_DD (const LONG a, const LONG b)
 
 #if !defined(FUNCTION_fixmuldiv2BitExact_DD)
 #define FUNCTION_fixmuldiv2BitExact_DD
+#ifndef NO_WARN_FIXMUL
 #if defined(_MSC_VER) || defined(__CC_ARM) || defined(__ANALOG_EXTENSIONS__) || defined(__TI_COMPILER_VERSION__)
 #pragma message ("Extremely slow implementation of fixmuldiv2BitExact_DD !!")
 #else
 #warning Extremely slow implementation of fixmuldiv2BitExact_DD !!
+#endif
 #endif
 inline LONG fixmuldiv2BitExact_DD (const LONG a, const LONG b)
 {
@@ -152,10 +156,12 @@ inline LONG fixmul_DD (const LONG a, const LONG b)
 
 #if !defined(FUNCTION_fixmulBitExact_DD)
 #define FUNCTION_fixmulBitExact_DD
+#ifndef NO_WARN_FIXMUL
 #if defined(_MSC_VER) || defined(__CC_ARM) || defined(__ANALOG_EXTENSIONS__) || defined(__TI_COMPILER_VERSION__) || defined(__XTENSA__)
 #pragma message ("Extremely slow implementation of fixmulBitExact_DD !!")
 #else
 #warning Extremely slow implementation of fixmulBitExact_DD !!
+#endif
 #endif
 inline LONG fixmulBitExact_DD (const LONG a, const LONG b)
 {
